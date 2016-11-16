@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+const images = [
+  { src: 'images/image1.jpg', alt: 'Lake' },
+  { src: 'images/image2.jpg', alt: 'Horses' },
+  { src: 'images/image6.jpg', alt: 'Wheat' },
+  { src: 'images/image3.jpg', alt: 'Mountain' },
+  { src: 'images/image7.jpg', alt: 'Palm tree' }
+];
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -11,11 +19,9 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <basic-carousel aria-label="Nature scenes" selection-wraps="true">
-          <img src="images/image1.jpg" alt="Lake"/>
-          <img src="images/image2.jpg" alt="Horses"/>
-          <img src="images/image6.jpg" alt="Wheat"/>
-          <img src="images/image3.jpg" alt="Mountain"/>
-          <img src="images/image7.jpg" alt="Palm tree"/>
+          {images.map(image =>
+            <img src={image.src} key={image.alt} alt={image.alt} />
+          )}
         </basic-carousel>
       </div>
     );
