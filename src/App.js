@@ -11,21 +11,40 @@ const images = [
 ];
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { count: 3 };
+  }
+
+  countChanged(event) {
+    this.setState({
+      count: event.target.value
+    });
+  }
+
   render() {
+
+    const visibleImages = images.slice(0, this.state.count);
+
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <p>
+            <input type="number" value={this.state.count} min="1" max={images.length}
+              onChange={event => this.countChanged(event)}
+            />
+          </p>
         </div>
-        <basic-carousel aria-label="Nature scenes" selection-wraps="true">
-          {images.map(image =>
+        <basic-carousel aria-label="Nature scenes">
+          {visibleImages.map(image =>
             <img src={image.src} key={image.alt} alt={image.alt} />
           )}
         </basic-carousel>
       </div>
     );
   }
+
 }
 
 export default App;
