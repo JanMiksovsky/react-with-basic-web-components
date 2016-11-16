@@ -1,28 +1,33 @@
-.App {
-  text-align: center;
+html {
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  background: black;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#root,
+.App,
+basic-carousel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+body,
+button,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
 }
 
 .App-header {
   background-color: #222;
+  color: #eee;
   padding: 10px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-basic-carousel {
-  height: 600px;
-  width: 100%;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  text-align: center;
 }

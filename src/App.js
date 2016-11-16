@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
 
 const images = [
   { src: 'images/image1.jpg', alt: 'Lake' },
@@ -9,6 +9,7 @@ const images = [
   { src: 'images/image3.jpg', alt: 'Mountain' },
   { src: 'images/image7.jpg', alt: 'Palm tree' }
 ];
+
 
 class App extends React.Component {
 
@@ -30,11 +31,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="App-header">
-          <p>
-            <input type="number" value={this.state.count} min="1" max={images.length}
-              onChange={event => this.countChanged(event)}
-            />
-          </p>
+          Show&nbsp;
+          <input type="number" value={this.state.count} min="1" max={images.length}
+            onChange={event => this.countChanged(event)}
+          />
+          &nbsp;images
         </div>
         <basic-carousel aria-label="Nature scenes">
           {visibleImages.map(image =>
